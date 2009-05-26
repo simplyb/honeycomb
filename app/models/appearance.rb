@@ -44,7 +44,7 @@ class Appearance < ActiveRecord::Base
     File.readlines(DHCP_LOG).each { |line| line.grep(/DHCPACK/).each { |l| parse(l.chomp) } }
 
     # ? (192.168.1.1) at 00:1A:70:3F:2D:12 [ether] on eth0
-    %x[#{NMAP_COMMAND} -sP 192.168.1.0/24]
+    %x[#{NMAP_COMMAND} -sP #{DHCP_SERVER}/24]
     arplist = %x[#{ARP_COMMAND} -a].split(/\n/)
     arplist.each do |l|
       if matches = l.match(/^\? \(([\d\.]+)\) at ([\w:]+)/)

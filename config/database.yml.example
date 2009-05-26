@@ -1,0 +1,17 @@
+development: 
+  adapter: mysql
+  database: &db honeycomb 
+  username: &user your_username
+  password: &pass your_password
+
+test: 
+  adapter: mysql
+  database: *db 
+  username: *user
+  password: *pass
+
+production: 
+  adapter: mysql
+  database: *db 
+  username: *user
+  password: *pass

@@ -16,6 +16,7 @@ config.action_controller.perform_caching             = true
 
 # Use a different cache store in production
 # config.cache_store = :mem_cache_store
+config.action_view.cache_template_loading = true
 
 # Enable serving of images, stylesheets, and javascripts from an asset server
 # config.action_controller.asset_host                  = "http://assets.example.com"
@@ -32,5 +33,5 @@ config.gem "daemons"
 PING_COMMAND = '/bin/ping -c1 -t2'
 ARP_COMMAND = '/sbin/arp'
 NMAP_COMMAND = '/usr/bin/nmap'
-
+DHCP_SERVER = '192.168.1.0'
 DHCP_LOG = '/var/log/messages'
